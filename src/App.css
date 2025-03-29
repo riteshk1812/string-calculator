@@ -83,7 +83,7 @@ button:hover {
 }
 
 .calculator p span {
-  font-style: italic;
+  margin-left: 5px;
 }
 
 .calculator p span.error {

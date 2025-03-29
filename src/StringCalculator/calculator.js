@@ -1,15 +1,16 @@
 export function add(number) {
-    if(!number) return 0;
+    if (number === "") return 0;
 
-    let delimeter = /,|\n/;
-    
-    if(number.startsWith("//")) {
+    let delimiter = /,|\n/;
+
+    if (number.startsWith("//")) {
         const splittedNums = number.split("\n");
-        delimeter = new RegExp(splittedNums[0].slice(2));
+        delimiter = new RegExp(splittedNums[0].slice(2));
         number = splittedNums.slice(1).join("\n");
     }
 
-    const numberArr = number.split(delimeter).map(Number);
+    const numberArr = number.split(delimiter).map(num => Number(num.trim()));
+
     const negativesNums = numberArr.filter(num => num < 0);
 
     if (negativesNums.length > 0) {
